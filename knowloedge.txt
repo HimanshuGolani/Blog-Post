@@ -1,0 +1,9 @@
+1.Difference between  Schema and Model 
+ans :  A database model provides an abstract view of the entities, attributes, and relationships between entities in a database. On the other hand, a schema defines how a database structure can be implemented in a specific database management system (DBMS.)
+
+2. remember find() takes time to execute and so it should be async await function
+
+** 3. To secure the passward we use Library named (bcryptjs) that hashesthe passward.
+** 4.  the put() is use to update 
+** if you want to get the something form the url 
+you can have it by req.params.name of that thing 

@@ -1,0 +1,10 @@
+// backend errors 
+1. File not found or imported module not fouind in backend 
+Ans : this was due to the missing .js in import statement 
+
+2. Always check spellings that you typed , even check the CAPS.
+3. While doing the routwer setup you should Always check what kind of req. are you 
+specifing .
+4. findByIdAndremove is depreciated in the newer verrsions of mongoose 
+so please find the alternatives of this and depreciated functions 
+and then use other wise you will get not a function error in the code .
