@@ -7,3 +7,8 @@ ans :  A database model provides an abstract view of the entities, attributes, a
 ** 4.  the put() is use to update 
 ** if you want to get the something form the url 
 you can have it by req.params.name of that thing 
+
+5. What is the use of redux ?
+Ans : it handels and shares the state with the whole application.
+for example login details of a user. during a session it helps in sharing it with the whole app and miantaining it.
+ 

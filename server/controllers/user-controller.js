@@ -66,7 +66,9 @@ export const login = async (req, res) => {
     if (!isPasswardCorrect) {
       return res.status(400).json({ message: "Passward not correct" });
     } else {
-      return res.status(200).json({ message: "Login Succesfull" });
+      return res
+        .status(200)
+        .json({ message: "Login Succesfull", user: existinfUser });
     }
   }
 };

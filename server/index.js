@@ -2,10 +2,12 @@ import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/user-routes.js";
 import blogRouter from "./routes/blog-routes.js";
+import cors from "cors";
+import "dotenv/config";
 
 // initializing the app
 const app = express();
-
+app.use(cors());
 // middlewear
 app.use(express.json());
 
@@ -14,10 +16,9 @@ app.use("/api/user", router);
 app.use("/api/blog", blogRouter);
 
 // connecting to mongoose
-const CONNECTION_URL =
-  "mongodb+srv://author123:author123@cluster0.scpivm0.mongodb.net/Blog-Post";
+const CONNECTION_URL = process.env.CONNECTION_URL;
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 mongoose
   .connect(CONNECTION_URL)

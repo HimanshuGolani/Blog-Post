@@ -8,3 +8,13 @@ specifing .
 4. findByIdAndremove is depreciated in the newer verrsions of mongoose 
 so please find the alternatives of this and depreciated functions 
 and then use other wise you will get not a function error in the code .
+
+5. While accesting .env files variable always remember to import "dotenv/config" this
+will act as a mmiddle wear and allow you to access the file content . 
+
+
+// frontend 
+while rendering the card componment in the main screen the card was not rendering 
+and despite of meny tries the value was undefined , so i console.log(response.data) 
+which has a {Object} of {[]} like his and my useState was havig a array
+then i did respinse.data.blogs then boom it error was gone.  

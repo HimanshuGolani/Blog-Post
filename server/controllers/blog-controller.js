@@ -1,11 +1,11 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 import Blog from "../models/Blog.js";
 import User from "../models/User.js";
 
 export const getAllBlogs = async (req, res) => {
   let blogs;
   try {
-    blogs = await Blog.find();
+    blogs = await Blog.find().populate("user");
   } catch (error) {
     return console.log(error);
   }
