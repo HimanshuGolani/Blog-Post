@@ -20,6 +20,10 @@ const blogSchema = new Schema({
     ref: "User",
     required: true,
   },
+  likeCount: {
+    type: Number,
+    default: 0,
+  },
 });
 
 export default mongoose.model("Blog", blogSchema);

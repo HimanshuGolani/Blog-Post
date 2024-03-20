@@ -37,6 +37,7 @@ const Blogs = () => {
               description={blog.description}
               imgUrl={blog.image}
               userName={blog.user.name}
+              likeCount={blog.likeCount}
             />
           ))}
       </Box>

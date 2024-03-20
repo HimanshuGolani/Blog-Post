@@ -124,3 +124,17 @@ export const getByUserId = async (req, res) => {
     return res.status(200).json({ blogs: userBlogs });
   }
 };
+
+export const likePost = async (req, res) => {
+  const { id } = req.params;
+
+  const post = await Blog.findById(id);
+  const updatedPost = await Blog.findByIdAndUpdate(
+    id,
+    {
+      likeCount: post.likeCount + 1,
+    },
+    { new: true }
+  );
+  res.json(updatedPost);
+};

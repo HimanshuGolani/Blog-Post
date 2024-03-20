@@ -11,8 +11,18 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CreateIcon from "@mui/icons-material/Create";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { CardActionArea, CardActions } from "@mui/material";
 
-const Blog = ({ title, description, imgUrl, userName, isUser, id }) => {
+const Blog = ({
+  title,
+  description,
+  imgUrl,
+  userName,
+  isUser,
+  id,
+  likeCount,
+}) => {
   const navigate = useNavigate();
   const handelEdit = (e) => {
     navigate(`/myblogs/${id}`);
@@ -28,6 +38,18 @@ const Blog = ({ title, description, imgUrl, userName, isUser, id }) => {
   };
   const handelDelete = () => {
     deleteRequest();
+  };
+
+  const likePost = async () => {
+    try {
+      const response = await axios.patch(
+        `http://localhost:5000/api/blog/${id}/likePost`
+      );
+      const data = await response.data;
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <>
@@ -65,9 +87,16 @@ const Blog = ({ title, description, imgUrl, userName, isUser, id }) => {
         <CardContent>
           <hr />
           <br />
+
           <Typography variant="body2" color="text.secondary">
             {<b>{userName}</b>} : {description}
           </Typography>
+          <CardActions>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon onClick={likePost} />
+            </IconButton>
+            <p> {likeCount}</p>
+          </CardActions>
         </CardContent>
       </Card>
     </>

@@ -28,7 +28,7 @@ const Header = () => {
               cursor: "pointer",
             }}
           >
-            Blog Post
+            TweetX
           </Typography>
           {isLoggedIn && (
             <Box display="flex" margin="auto">

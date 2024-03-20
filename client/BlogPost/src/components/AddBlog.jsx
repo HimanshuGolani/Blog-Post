@@ -15,7 +15,7 @@ const AddBlog = () => {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
-    image: "", // Store the selected image as base64 string
+    image: "",
   });
 
   const sendRequest = async () => {
