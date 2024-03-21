@@ -65,7 +65,7 @@ const Blog = ({
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-              {userName.charAt(0)}
+              {userName && userName.length > 0 && userName[0]}
             </Avatar>
           }
           action={

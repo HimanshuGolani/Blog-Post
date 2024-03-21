@@ -18,3 +18,9 @@ while rendering the card componment in the main screen the card was not renderin
 and despite of meny tries the value was undefined , so i console.log(response.data) 
 which has a {Object} of {[]} like his and my useState was havig a array
 then i did respinse.data.blogs then boom it error was gone.  
+
+
+while displaying the userNames first Charactr it was shoing cannot use charAt(0) or [0]
+because sometimes the userName is not present means null and these all cannot be applied to it .
+this is the solution.
+{userName && userName.length > 0 && userName[0]}
